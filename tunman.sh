@@ -43,7 +43,7 @@ list_tun() {
         PROCDAT=$(cat /proc/${ID}/cmdline | tr -d "\0")
         SERVER=$(printf ${PROCDAT} | grep -Eo "([a-zA-Z.]+)@([a-zA-Z.0-9]+)" )
         TPATH=$(echo $PROCDAT | grep -Eo "(/[/a-zA-Z.]+)")
-        printf "$a $ID $TPATH $SERVER"
+        printf "$a $ID $TPATH $SERVER\n"
         let a=a+1
     done
 
